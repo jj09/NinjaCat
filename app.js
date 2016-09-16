@@ -1,6 +1,6 @@
 var keyCode = {
-	left: 'ArrowLeft',
-	up: 'ArrowUp',
+  left: 'ArrowLeft',
+  up: 'ArrowUp',
   right: 'ArrowRight',
   down: 'ArrowDown',
   a: 'a',
@@ -11,15 +11,16 @@ var konamiSequence = [keyCode.up, keyCode.up, keyCode.down, keyCode.down, keyCod
 
 document.addEventListener('keydown', function (evt) {
   if (evt.key !== konamiSequence[konamiSequenceIndex++]) {
-  	konamiSequenceIndex = 0;
+    konamiSequenceIndex = 0;
     return;
   }
   
   if (konamiSequence.length === konamiSequenceIndex) {
-  	konamiSequenceIndex = 0;
-  	document.body.innerHTML += `<div style="position: fixed; bottom: 0; width: 100%;">
-				<marquee direction="right" style="align: bottom">
-					<img src="https://dl.dropboxusercontent.com/u/6623066/ninjacattrex_transparent.gif" width="200px" />							</marquee>
-			</div>`;
+    konamiSequenceIndex = 0;
+    document.body.innerHTML += `<div style="position: fixed; bottom: 0; width: 100%;">
+        <marquee direction="right" style="align: bottom">
+          <img src="https://dl.dropboxusercontent.com/u/6623066/ninjacattrex_transparent.gif" width="200px" />							
+        </marquee>
+      </div>`;
   }
 });
